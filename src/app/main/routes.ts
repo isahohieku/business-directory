@@ -25,7 +25,7 @@ export const routes: Routes = [
         path: 'app',
         component: AdminLayoutComponent,
         children: [
-            { path: 'dashboard', component: AdminComponent, loadChildren: '../admin/admin.module#AdminModule' }
+            { path: '', component: AdminComponent, loadChildren: '../admin/admin.module#AdminModule' }
         ]
     }
 ];

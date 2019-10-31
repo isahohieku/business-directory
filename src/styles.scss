@@ -166,6 +166,10 @@
     }
 }
 
+a, a:active, a:focus, a:link {
+  text-decoration: none;
+}
+
 .mousePointer {
     cursor: pointer;
 }

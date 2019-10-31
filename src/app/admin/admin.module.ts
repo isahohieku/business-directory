@@ -5,9 +5,11 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BusinessesComponent } from './businesses/businesses.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
-  declarations: [HomeComponent, DashboardComponent],
+  declarations: [DashboardComponent, BusinessesComponent, CategoriesComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)

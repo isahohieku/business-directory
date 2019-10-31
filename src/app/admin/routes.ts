@@ -1,17 +1,26 @@
 import { Routes } from '@angular/router';
-import { SigninComponent } from './signin/signin.component';
-import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BusinessesComponent } from './businesses/businesses.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [
     {
         path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+    },
+    {
+        path: 'dashboard',
         component: DashboardComponent
     },
-    // {
-    //     path: 'dashboard',
-    //     component:
-    // }
+    {
+        path: 'businesses',
+        component: BusinessesComponent
+    },
+    {
+        path: 'categories',
+        component: CategoriesComponent
+    }
 ];
 
 export { routes };
