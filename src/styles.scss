@@ -143,17 +143,21 @@
     }
   }
 
-.text {
-    &-primary {
+.text- {
+    &primary {
         color: #6747cd !important
     }
-    &-grey{
+    &grey{
         color: rgb(167, 167, 167) !important;
     }
 
-    &-white{
+    &white{
         color: white !important;
     }
+
+    &black{
+      color: rgb(46, 46, 46) !important;
+  }
 }
 
 .bg {

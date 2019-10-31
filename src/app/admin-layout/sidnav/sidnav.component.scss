@@ -1,0 +1,18 @@
+#avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px rgb(168, 167, 167) solid;
+    overflow: hidden;
+    background-image: url('../../../assets/img/lion.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.activeLink {
+    border-left: 10px solid #6747cd;
+}
+
+.aLink {
+    border-left: 10px solid transparent;
+}

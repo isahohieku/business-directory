@@ -19,7 +19,13 @@ export const routes: Routes = [
         component: AdminComponent,
         children: [
             { path: '', component: HomeComponent },
-            { path: 'dashboard', component: AdminLayoutComponent, loadChildren: '../admin/admin.module#AdminModule' }
+        ]
+    },
+    {
+        path: 'app',
+        component: AdminLayoutComponent,
+        children: [
+            { path: 'dashboard', component: AdminComponent, loadChildren: '../admin/admin.module#AdminModule' }
         ]
     }
 ];
