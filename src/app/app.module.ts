@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { MainModule } from './main/main.module';
 import { SharedModule } from './shared/shared.module';
-import { AdminModule } from './admin/admin.module';
+import { AdminLayoutModule } from './admin-layout/admin-layout.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { AdminModule } from './admin/admin.module';
     SharedModule.forRoot(),
     BrowserModule,
     LayoutModule,
-    AdminModule,
+    AdminLayoutModule,
     MainModule
   ],
   providers: [],
