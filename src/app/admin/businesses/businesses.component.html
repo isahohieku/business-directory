@@ -6,11 +6,28 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mt-5">
   <div class="row">
+    <div class="col">
+      <h5>All businesses</h5>
+    </div>
+  </div>
+  <div class="row mt-4">
     <div class="col-4">
       <mat-card>
-        <mat-card-title>INITS Limited</mat-card-title>
+        <mat-card-title>
+          <div class="container">
+            <div class="row">
+              <div class="col px-0">
+                <small>INITS Limited</small>
+              </div>
+              <div class="col px-0 d-flex justify-content-end">
+                <button class="btn text-success"><i class="fas fa-pen"></i></button>
+                <button class="btn text-danger"><i class="far fa-times-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </mat-card-title>
         <div class="overflow-hidden" style="max-height: 200px">
           <img mat-card-image src="assets/img/lion.png">
         </div>
@@ -18,16 +35,36 @@
         <mat-card-content>
           <div class="container">
             <div class="row">
-              <div class="col">
+              <div class="col px-0">
                 <p class="text-justify mt-3">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia cum dolorem officia consequuntur tempore!
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia cum dolorem officia consequuntur
+                  tempore!
+                </p>
+
+                <p>
+                  <i class="fas fa-link mr-3"></i>
+                  <a href="www.inits.ng">www.inits.ng</a>
+                </p>
+
+                <p>
+                  <i class="far fa-envelope mr-3"></i>
+                  <a href="mailto:inits@email.com">inits@email.com</a>
+                </p>
+
+                <p>
+                  <i class="fas fa-phone fa-flip-horizontal mr-3"></i>
+                  <a href="tel:+1-555-555-1212">555-555-1212</a>
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt mr-3"></i>
+                  <span>Yaba, Lagos</span>
                 </p>
               </div>
             </div>
           </div>
         </mat-card-content>
 
-        <mat-card-footer class="py-3">
+        <mat-card-footer class="pb-3">
           <hr>
           <div class="container">
             <p class="text-grey">Categories</p>
