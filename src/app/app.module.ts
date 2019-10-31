@@ -11,8 +11,7 @@ import { CreateCategoryModalComponent } from './util/create-category-modal/creat
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CreateCategoryModalComponent
+    AppComponent
   ],
   imports: [
     SharedModule.forRoot(),

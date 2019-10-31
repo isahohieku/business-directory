@@ -1,3 +1,81 @@
-<p>
-  categories works!
-</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <input type="search" class="form-control w-100" placeholder="Enter keyword to search a category">
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h5>All Categories</h5>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <button mat-fab color="primary" selected (click)="openCreateModal()"><i class="fas fa-plus"></i></button>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-4">
+      <mat-card>
+        <mat-card-title>
+          <div class="container">
+            <div class="row">
+              <div class="col px-0 d-flex justify-content-center">
+                <small>Web development</small>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+        </mat-card-title>
+        <mat-card-content>
+          <div class="container">
+            <div class="row">
+              <div class="col px-0">
+                <button class="btn text-grey"><i class="fas fa-pen"></i></button>
+                <button class="btn text-grey"><i class="far fa-times-circle"></i></button>
+              </div>
+              <div class="col-4 d-flex justify-content-end">
+                <mat-chip-list>
+                  <mat-chip color="accent" selected>50</mat-chip>
+                </mat-chip-list>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-4">
+      <mat-card>
+        <mat-card-title>
+          <div class="container">
+            <div class="row">
+              <div class="col px-0 d-flex justify-content-center">
+                <small>Software development</small>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+        </mat-card-title>
+        <mat-card-content>
+          <div class="container">
+            <div class="row">
+              <div class="col px-0">
+                <button class="btn text-grey"><i class="fas fa-pen"></i></button>
+                <button class="btn text-grey"><i class="far fa-times-circle"></i></button>
+              </div>
+              <div class="col-4 justify-content-end d-flex">
+                <mat-chip-list>
+                  <mat-chip color="accent" selected>50</mat-chip>
+                </mat-chip-list>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

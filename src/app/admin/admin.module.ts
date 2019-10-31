@@ -7,15 +7,24 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BusinessesComponent } from './businesses/businesses.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { CreateCategoryModalComponent } from '../util/create-category-modal/create-category-modal.component';
 
 @NgModule({
-  declarations: [DashboardComponent, BusinessesComponent, CategoriesComponent],
+  declarations: [
+    DashboardComponent,
+    BusinessesComponent,
+    CategoriesComponent,
+    CreateCategoryModalComponent
+  ],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule
+  ],
+  entryComponents: [
+    CreateCategoryModalComponent
   ]
 })
 export class AdminModule { }
