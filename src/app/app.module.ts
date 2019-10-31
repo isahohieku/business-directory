@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { AdminLayoutModule } from './admin-layout/admin-layout.module';
   imports: [
     SharedModule.forRoot(),
     BrowserModule,
+    BrowserAnimationsModule,
     LayoutModule,
     AdminLayoutModule,
     MainModule

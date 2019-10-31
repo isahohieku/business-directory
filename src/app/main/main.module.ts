@@ -5,11 +5,13 @@ import { CoreComponent } from '../core/core.component';
 import { routes } from './routes';
 import { AdminComponent } from '../admin/admin.component';
 import { SigninComponent } from '../admin/signin/signin.component';
+import { HomeComponent } from '../admin/home/home.component';
 
 @NgModule({
   declarations: [
     CoreComponent,
     AdminComponent,
+    HomeComponent,
     SigninComponent
   ],
   imports: [

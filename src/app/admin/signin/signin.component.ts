@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
     this.createFormControls();
-    this.createFormControls();
+    this.createForm();
   }
 
   createFormControls() {
@@ -29,6 +29,10 @@ export class SigninComponent implements OnInit {
       email: this.email,
       password: this.password
     });
+  }
+
+  login() {
+    console.log('yes');
   }
 
 }

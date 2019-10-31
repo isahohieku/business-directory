@@ -4,6 +4,7 @@ import { CoreComponent } from '../core/core.component';
 import { AdminLayoutComponent } from '../admin-layout/admin-layout.component';
 import { SigninComponent } from '../admin/signin/signin.component';
 import { AdminComponent } from '../admin/admin.component';
+import { HomeComponent } from '../admin/home/home.component';
 
 export const routes: Routes = [
     {
@@ -17,7 +18,7 @@ export const routes: Routes = [
         path: 'admin',
         component: AdminComponent,
         children: [
-            { path: '', component: SigninComponent },
+            { path: '', component: HomeComponent },
             { path: 'dashboard', component: AdminLayoutComponent, loadChildren: '../admin/admin.module#AdminModule' }
         ]
     }
