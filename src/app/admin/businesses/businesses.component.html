@@ -11,6 +11,9 @@
     <div class="col">
       <h5>All businesses</h5>
     </div>
+    <div class="col d-flex justify-content-end">
+      <button mat-fab color="primary" selected (click)="openCreateModal()"><i class="fas fa-plus"></i></button>
+    </div>
   </div>
   <div class="row mt-4">
     <div class="col-4">
@@ -23,7 +26,7 @@
               </div>
               <div class="col px-0 d-flex justify-content-end">
                 <button class="btn text-success"><i class="fas fa-pen"></i></button>
-                <button class="btn text-danger"><i class="far fa-times-circle"></i></button>
+                <button class="btn text-danger" (click)="deleteModal()"><i class="far fa-times-circle"></i></button>
               </div>
             </div>
           </div>
@@ -59,6 +62,17 @@
                   <i class="fas fa-map-marker-alt mr-3"></i>
                   <span>Yaba, Lagos</span>
                 </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col d-flex justify-content-end">
+                <p class="mt-1 mr-2">Views</p>
+                <mat-chip-list class="text-center">
+                  <mat-chip class="d-inline" color="accent" selected>100</mat-chip>
+                </mat-chip-list>
               </div>
             </div>
           </div>

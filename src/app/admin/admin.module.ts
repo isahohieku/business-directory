@@ -8,13 +8,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BusinessesComponent } from './businesses/businesses.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CreateCategoryModalComponent } from '../util/create-category-modal/create-category-modal.component';
+import { DeleteItemModalComponent } from '../util/delete-item-modal/delete-item-modal.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     BusinessesComponent,
     CategoriesComponent,
-    CreateCategoryModalComponent
+    CreateCategoryModalComponent,
+    DeleteItemModalComponent
+
   ],
   imports: [
     SharedModule,
@@ -24,7 +27,8 @@ import { CreateCategoryModalComponent } from '../util/create-category-modal/crea
     RouterModule
   ],
   entryComponents: [
-    CreateCategoryModalComponent
+    CreateCategoryModalComponent,
+    DeleteItemModalComponent
   ]
 })
 export class AdminModule { }
