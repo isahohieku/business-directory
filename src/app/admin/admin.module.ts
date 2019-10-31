@@ -9,6 +9,7 @@ import { BusinessesComponent } from './businesses/businesses.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CreateCategoryModalComponent } from '../util/create-category-modal/create-category-modal.component';
 import { DeleteItemModalComponent } from '../util/delete-item-modal/delete-item-modal.component';
+import { CreateBusinessModalComponent } from '../util/create-business-modal/create-business-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { DeleteItemModalComponent } from '../util/delete-item-modal/delete-item-
     BusinessesComponent,
     CategoriesComponent,
     CreateCategoryModalComponent,
-    DeleteItemModalComponent
+    DeleteItemModalComponent,
+    CreateBusinessModalComponent
+
 
   ],
   imports: [
@@ -28,7 +31,8 @@ import { DeleteItemModalComponent } from '../util/delete-item-modal/delete-item-
   ],
   entryComponents: [
     CreateCategoryModalComponent,
-    DeleteItemModalComponent
+    DeleteItemModalComponent,
+    CreateBusinessModalComponent
   ]
 })
 export class AdminModule { }

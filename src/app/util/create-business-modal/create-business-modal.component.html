@@ -1,0 +1,94 @@
+<div class="container px-0">
+  <div class="row">
+    <div class="col my-4">
+      <h6>Create a Business</h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="businessForm" (ngSubmit)="create()">
+        <!-- Business name-->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w-100" style="width: 500px !important">
+                <input matInput type="text" placeholder="Business name" formControlName="name">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <!-- Business description-->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w-100" style="width: 500px !important">
+                <textarea matInput placeholder="Business description" formControlName="description"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <!-- Business website-->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w-100" style="width: 500px !important">
+                <input matInput type="text" placeholder="Business Website" formControlName="website">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <!-- Business Email-->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w-100" style="width: 500px !important">
+                <input matInput type="email" placeholder="Business email" formControlName="email">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <!-- Business phone number-->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w-100" style="width: 500px !important">
+                <input matInput type="text" placeholder="Business Phone number" formControlName="phone">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <!-- Business Address-->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w-100" style="width: 500px !important">
+                <textarea matInput placeholder="Business Address" formControlName="address"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <hr class="mt-2">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+
+              <button type="button" (click)="this.uploadImage.click()" mat-fab color="primary" class="text-light"><i class="fas fa-cloud-upload-alt"></i></button>
+              <span class="ml-2 text-grey">Add images</span>
+
+              <input type="file" hidden #uploadImage>
+            </div>
+          </div>
+        </div>
+        <!-- Submit button -->
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col d-flex justify-content-end">
+              <button mat-raised-button color="primary" class="btn border-0 text-white w-100 py-2">Create</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
