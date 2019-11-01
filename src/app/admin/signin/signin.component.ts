@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+import { UtilService } from 'src/app/services/util.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,7 +15,15 @@ export class SigninComponent implements OnInit {
   email: FormControl;
   password: FormControl;
 
-  constructor() { }
+  constructor(
+    private auth: AuthService,
+    private util: UtilService,
+    private router: Router
+  ) {
+    if (this.util.getUserObject()) {
+      this.router.navigateByUrl('/app');
+    }
+  }
 
   ngOnInit() {
     this.createFormControls();
@@ -32,7 +43,25 @@ export class SigninComponent implements OnInit {
   }
 
   login() {
-    console.log('yes');
+    if (this.signinForm.valid) {
+      const data = {
+        email: this.email.value,
+        password: this.password.value
+      };
+
+      this.auth.signIn(data)
+        .then((res: any) => {
+          if (res.status === 'success') {
+            this.util.setUserObject(res.data);
+            this.util.setToken(res.data.token);
+            this.router.navigateByUrl('/app');
+          }
+        })
+        .catch(e => {
+          console.log(e);
+        });
+
+    }
   }
 
 }
