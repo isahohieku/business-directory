@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { materials } from './material-design/materials';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../admin/auth/auth-interceptor/http-interceptor';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule,
     ...materials
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   exports: [
     CommonModule,
