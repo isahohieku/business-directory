@@ -34,7 +34,7 @@ export class UtilService {
   getToken() {
     let token;
     if ((localStorage.getItem('token') !== undefined) && (localStorage.getItem('token') !== null)) {
-      token = localStorage.getItem('token');
+      token = localStorage.getItem('token').split('"')[1];
     }
 
     return token;
