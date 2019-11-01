@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { CoreComponent } from '../core/core.component';
 import { routes } from './routes';
 import { AdminComponent } from '../admin/admin.component';
@@ -16,7 +16,7 @@ import { HomeComponent } from '../admin/home/home.component';
   ],
   imports: [
     SharedModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
   exports: [
     RouterModule
