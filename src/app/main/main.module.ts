@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CoreComponent } from '../core/core.component';
 import { routes } from './routes';
 import { AdminComponent } from '../admin/admin.component';
-import { SigninComponent } from '../admin/signin/signin.component';
+import { SigninComponent } from '../admin/auth/signin/signin.component';
 import { HomeComponent } from '../admin/home/home.component';
 
 @NgModule({
