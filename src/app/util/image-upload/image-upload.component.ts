@@ -8,7 +8,7 @@ declare var $: any;
   templateUrl: './image-upload.component.html',
   styleUrls: ['./image-upload.component.scss']
 })
-export class ProductImageUploadComponent implements OnInit {
+export class ImageUploadComponent implements OnInit {
 
   @ViewChild('closeModal') closeModal: ElementRef;
   @ViewChild('cropper-wrapper') cropperWrapper: ElementRef;

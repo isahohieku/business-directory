@@ -7,11 +7,11 @@ import { UploadsService } from 'src/app/services/uploads.service';
 declare var $: any;
 
 @Component({
-  selector: 'app-product-image-upload-single',
-  templateUrl: './product-image-upload-single.component.html',
-  styleUrls: ['./product-image-upload-single.component.scss']
+  selector: 'app-image-upload-single',
+  templateUrl: './image-upload-single.component.html',
+  styleUrls: ['./image-upload-single.component.scss']
 })
-export class ProductImageUploadSingleComponent implements OnInit, OnChanges {
+export class ImageUploadSingleComponent implements OnInit, OnChanges {
 
   responses: Array<any>;
   uploaderOptions: FileUploaderOptions;

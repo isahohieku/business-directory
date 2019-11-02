@@ -1,9 +1,9 @@
 <div *ngFor="let image of productImages; let i = index"
   class="position-relative image_holder_width mr-4 d-inline-block">
-  <app-product-image-upload-single class="position-relative" [title]="image?.title" [fileToUpload]="image?.file"
+  <app-image-upload-single class="position-relative" [title]="image?.title" [fileToUpload]="image?.file"
     [affirm]="image?.affirm" [id]="i" (remove)="removeImage($event)" (uploadStart)="uploadStarted(i)"
     (uploadEnd)="uploadEnded($event, i)" (binary)="binary($event, i)" (click)="toggleFileInput(i)">
-  </app-product-image-upload-single>
+  </app-image-upload-single>
   <input type="file" accept="image/*" hidden id="inputField{{id}}-{{i}}" (change)="uploadInitiated($event, i)" />
 
   <!-- Preview Image Modal -->
