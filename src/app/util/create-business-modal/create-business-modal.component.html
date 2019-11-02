@@ -72,16 +72,10 @@
         <div class="container">
           <div class="row">
             <div class="col">
-
-              <button type="button" (click)="this.uploadImage.click()" mat-fab color="primary" class="text-light"><i class="fas fa-cloud-upload-alt"></i></button>
-              <span class="ml-2 text-grey">Add images</span>
-
-              <input type="file" hidden #uploadImage>
+              <!-- Images Uploaded -->
+              <app-image-upload [id]="0"></app-image-upload>
             </div>
           </div>
-
-          <!-- Images Uploaded -->
-          <app-image-upload [id]="0"></app-image-upload>
         </div>
         <!-- Submit button -->
         <div class="container mt-5">

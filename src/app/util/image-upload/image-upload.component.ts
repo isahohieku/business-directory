@@ -48,11 +48,7 @@ export class ImageUploadComponent implements OnInit {
     this.imagePreview = e;
     this.productImages[i].binaryImage = e;
     this.activeImage = i;
-    if (this.fromAdmin) {
-      this.affirmImage();
-      return;
-    }
-    this.showModal();
+    this.affirmImage();
   }
 
   affirmImage() {
@@ -77,7 +73,7 @@ export class ImageUploadComponent implements OnInit {
 
   removeImage(i) {
     this.productImages.splice(i, 1);
-    if (!$(`[src='assets/images/add-img2.jpg']`).length) {
+    if (!$(`[src='assets/img/add-img2.jpg']`).length) {
       this.addImage();
     }
 

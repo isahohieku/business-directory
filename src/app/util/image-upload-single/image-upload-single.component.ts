@@ -45,7 +45,7 @@ export class ImageUploadSingleComponent implements OnInit, OnChanges {
   ) {
     this.responses = [];
     this.uploadedImages = [];
-    this.imagePreview = 'assets/images/add-img2.jpg';
+    this.imagePreview = 'assets/img/add-img2.jpg';
   }
 
   ngOnInit() {

@@ -8,6 +8,17 @@ import { AuthInterceptor } from '../admin/auth/auth-interceptor/http-interceptor
 import { ImageUploadComponent } from '../util/image-upload/image-upload.component';
 import { ImageUploadSingleComponent } from '../util/image-upload-single/image-upload-single.component';
 
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
+import { FileUploadModule } from 'ng2-file-upload';
+import { Cloudinary as cloudinary_core } from 'cloudinary-core';
+import { environment } from '../../environments/environment.prod';
+
+export const cloudinary = {
+  Cloudinary: cloudinary_core
+};
+
+export const config: CloudinaryConfiguration = environment.cloudinaryConfigs;
+
 @NgModule({
   declarations: [
     ImageUploadComponent,
@@ -19,7 +30,11 @@ import { ImageUploadSingleComponent } from '../util/image-upload-single/image-up
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    ...materials
+    ...materials,
+
+    // Cloudinary and File upload
+    CloudinaryModule.forRoot(cloudinary, config),
+    FileUploadModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
