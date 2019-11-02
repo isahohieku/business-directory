@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { ProductImage } from '../product-image';
-import { AddProductImagesService } from 'src/app/services/add-product-images.service';
+import { AddImagesService } from 'src/app/services/add-images.service';
 declare var $: any;
 
 @Component({
@@ -23,7 +23,7 @@ export class ProductImageUploadComponent implements OnInit {
   activeImage: any;
 
   constructor(
-    private addImageService: AddProductImagesService
+    private addImageService: AddImagesService
   ) {
     this.productImages = [];
   }
