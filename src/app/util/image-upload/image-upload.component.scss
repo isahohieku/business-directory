@@ -1,0 +1,32 @@
+.remove-doc {
+  cursor: pointer;
+  position: absolute;
+  right: -11px;
+  top: -11px;
+  z-index: 5;
+  width: 22px;
+  height: 22px;
+  border-radius: 25px;
+  background: #000;
+  color: #fff;
+}
+
+.remove-doc:after {
+  content: "\60";
+  font-family: "custom-font-icon";
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  line-height: 21px;
+  font-size: 16px;
+  text-align: center;
+  padding-left: 1px;
+}
+
+.image_holder_width {
+  width: 110px;
+}
+
+.cropper-wrapper {
+  background: rgba(0, 0, 0, 0.3) !important;
+}

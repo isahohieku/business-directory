@@ -1,0 +1,19 @@
+<div class="imageListWrapper position-relative mr-3 overflow-hidden">
+  <img [src]="imagePreview" alt="">
+  <div class="loader_overlay position-absolute w-100 h-100" *ngIf="uploadPercentageProgress > 0 && uploadPercentageProgress < 100"></div>
+</div>
+
+<div *ngIf="uploadPercentageProgress > 0 && uploadPercentageProgress < 100"
+  class="pie-wrapper progress-95 style-2 position-absolute progress_wrapper">
+  <!-- <span class="label">95<span class="smaller">%</span></span> -->
+  <div class="pie" [ngClass]="uploadPercentageProgress <= 50? 'pie_clip_part' : ''">
+    <div class="left-side half-circle" [ngStyle]="{'transform': 'rotate(' + uploadPercentageProgress * 3.6 + 'deg)'}">
+    </div>
+    <div class="half-circle"
+      [ngStyle]="{'transform': uploadEndStatus || cloudinaryResponseStatus? 'rotate(180deg)': ''}"
+      [ngClass]="uploadPercentageProgress <= 50 ? 'right-side_torched' : 'right-side_torched2'"></div>
+  </div>
+  <div class="shadow"></div>
+</div>
+
+<!-- <div class="isLoading"></div> -->
