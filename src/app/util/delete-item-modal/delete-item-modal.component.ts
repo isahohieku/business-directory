@@ -16,7 +16,6 @@ export class DeleteItemModalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.data);
   }
 
   deleteBusiness() {
@@ -32,7 +31,7 @@ export class DeleteItemModalComponent implements OnInit {
     }
 
     if (this.data.component === 'category') {
-      url = `category?id=${this.data.id}`;
+      url = `categories?id=${this.data.id}`;
     }
 
     this.crud.deleteMethod(url)

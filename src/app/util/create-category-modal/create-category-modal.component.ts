@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { CrudService } from 'src/app/services/crud.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-create-category-modal',
@@ -14,6 +14,7 @@ export class CreateCategoryModalComponent implements OnInit {
   categoryForm: FormGroup;
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private crud: CrudService,
     private dialog: MatDialog
   ) { }
@@ -21,6 +22,7 @@ export class CreateCategoryModalComponent implements OnInit {
   ngOnInit() {
     this.createFormControl();
     this.createForm();
+    this.checkTask();
   }
 
   createFormControl() {
@@ -33,20 +35,41 @@ export class CreateCategoryModalComponent implements OnInit {
     });
   }
 
+  checkTask() {
+    if (this.data.header === 'Update') {
+      this.category.patchValue(this.data.name);
+    }
+  }
+
   create() {
     if (this.categoryForm.valid) {
       const data = {
-        name: this.category.value
+        name: this.category.value,
+        id: null
       };
+
+      if (this.data.header === 'Update') {
+        data.id = this.data.id;
+      }
 
       const url = `categories`;
 
-      this.crud.postAllMethod(url, data)
+      if (this.data.header === 'Update') {
+        this.crud.updateMethod(url, data)
         .then((res: any) => {
-          console.log(res);
           this.dialog.closeAll();
         })
         .catch(e => console.log(e));
+      }
+
+      if (this.data.header === 'Create') {
+        delete data.id;
+        this.crud.postAllMethod(url, data)
+        .then((res: any) => {
+          this.dialog.closeAll();
+        })
+        .catch(e => console.log(e));
+      }
     }
   }
 

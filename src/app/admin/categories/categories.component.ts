@@ -29,15 +29,21 @@ export class CategoriesComponent implements OnInit {
         if (res.status === 'success') {
           this.categories = res.data;
         }
-        console.log(res);
       })
       .catch(e => console.log(e));
   }
 
-  openCreateModal() {
+  openCreateModal(id) {
+    let data = {
+      header: `Create`
+    };
+    if (id) {
+      data = { header: 'Update', ...this.getSelectedCategory(id) };
+    }
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = false;
+    dialogConfig.data = data;
     this.dialog.open(CreateCategoryModalComponent, dialogConfig)
       .afterClosed().subscribe(_ => { this.getCategories(); });
   }
