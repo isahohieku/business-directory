@@ -15,10 +15,12 @@
                 <div class="row">
                     <div class="col">
                         <!-- Search field -->
-                        <mat-form-field class="w-100">
-                            <input matInput type="text" [matAutocomplete]="auto" placeholder="Search for a Business"
-                                [(ngModel)]="businessSearch" name="businessSearch" (keyup)="searchABusiness($event)">
-                        </mat-form-field>
+                        <form [formGroup]="businessSearchForm">
+                            <mat-form-field class="w-100">
+                                <input matInput type="text" [matAutocomplete]="auto" placeholder="Search for a Business"
+                                    formControlName="businessSearch" name="businessSearch">
+                            </mat-form-field>
+                        </form>
                         <!-- Auto complete -->
                         <div class="position-absolute">
                             <mat-autocomplete #auto="matAutocomplete">
