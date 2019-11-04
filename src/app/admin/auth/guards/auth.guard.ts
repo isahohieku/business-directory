@@ -2,6 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UtilService } from '../../../services/util.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,17 +13,13 @@ export class AuthGuard implements CanActivate, OnDestroy {
 
   constructor(
     private util: UtilService,
+    private auth: AuthService,
     private router: Router) {
     this.listenToUserObjChange();
   }
 
   listenToUserObjChange() {
-    if (this.util.getUserObject() !== null) {
-      this.loginStatus = true;
-      return;
-    }
-
-    this.loginStatus = false;
+    this.auth.listenToLoginStatus().subscribe(res => this.loginStatus = res);
   }
 
   canActivate(
@@ -31,8 +28,7 @@ export class AuthGuard implements CanActivate, OnDestroy {
 
     if (!this.loginStatus) {
       localStorage.clear();
-      // this.util.loginStatus.next(false);
-      return this.router.navigate(['/']);
+      return this.router.navigateByUrl('/admin');
     }
 
     return true;

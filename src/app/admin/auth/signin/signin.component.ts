@@ -54,6 +54,7 @@ export class SigninComponent implements OnInit {
           if (res.status === 'success') {
             this.util.setUserObject(res.data);
             this.util.setToken(res.data.token);
+            this.auth.setLoginStatus(true);
             this.router.navigateByUrl('/app');
           }
         })
