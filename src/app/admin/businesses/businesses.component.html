@@ -34,12 +34,12 @@
           </div>
         </mat-card-title>
         <div class="overflow-hidden" style="max-height: 200px">
-          <img mat-card-image src="assets/img/lion.png">
+          <!-- <img mat-card-image src="assets/img/lion.png"> -->
           <!-- Carousel -->
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" *ngFor="let item of item?.imageUrl">
-                <img class="d-block w-100" [src]="item" alt="Business Image">
+              <div class="carousel-item" *ngFor="let item2 of item?.images; let i = index" [ngClass]="{' active': i === 0}">
+                <img class="d-block w-100" [src]="item2?.imageUrl" alt="Business Image">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
