@@ -54,8 +54,8 @@ export class CrudService {
     return this.http.put(`${this.baseUrl}${url}`, data, this.header).toPromise();
   }
 
-  updateMethodWithoutToken(url, data) {
-    return this.http.put(`${this.baseUrl}${url}`, data, this.header).toPromise();
+  updateMethodWithoutData(url) {
+    return this.http.put(`${this.baseUrl}${url}`, this.header).toPromise();
   }
 
   deleteMethod(url) {

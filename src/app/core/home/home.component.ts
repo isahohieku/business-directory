@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
       )
       .subscribe((result: any) => {
         this.searchTerm = [];
-        this.searchTerm = result.data.filter(item => !this.businesses.find(item2 => item.id === item2.id));
+        this.searchTerm = result.data.filter(item => this.businesses.find(item2 => item.id === item2.id));
       });
   }
 

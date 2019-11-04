@@ -114,7 +114,7 @@ export class CreateBusinessModalComponent implements OnInit, OnDestroy {
       )
       .subscribe((result: any) => {
         this.searchTerm = [];
-        this.searchTerm = result.data.filter(item => !this.categories.find(item2 => item.id === item2.id));
+        this.searchTerm = result.data.filter(item => this.categories.find(item2 => item.id === item2.id));
       });
   }
 

@@ -24,8 +24,8 @@
                         <!-- Auto complete -->
                         <div class="position-absolute">
                             <mat-autocomplete #auto="matAutocomplete">
-                                <mat-option *ngFor="let option of searchTerm" [value]="option?.email">
-                                    {{0}}
+                                <mat-option *ngFor="let option of searchTerm" [value]="option?.name">
+                                    <a class="text-primary" routerLink="/business/{{option?.id}}">{{ option?.name }}</a>
                                 </mat-option>
                             </mat-autocomplete>
                         </div>
@@ -48,7 +48,7 @@
     <div class="row mt-4">
         <!-- A business card -->
         <div class="col-4 mt-3" *ngFor="let item of businesses">
-            <mat-card>
+            <mat-card class="mousePointer" routerLink="business/{{item?.id}}">
                 <mat-card-title>
                     <div class="container">
                         <div class="row">
@@ -59,8 +59,26 @@
                     </div>
                 </mat-card-title>
                 <div class="overflow-hidden" style="max-height: 200px">
-                    <img mat-card-image src="assets/img/lion.png">
+                    <!-- <img mat-card-image src="assets/img/lion.png"> -->
                     <!-- Carousel -->
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" *ngFor="let item2 of item?.images; let i = index"
+                                [ngClass]="{' active': i === 0}">
+                                <img class="d-block w-100" [src]="item2?.imageUrl" alt="Business Image">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
                 </div>
 
                 <mat-card-content>
