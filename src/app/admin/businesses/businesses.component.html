@@ -27,13 +27,30 @@
               </div>
               <div class="col px-0 d-flex justify-content-end">
                 <button class="btn text-success" (click)="openCreateModal()"><i class="fas fa-pen"></i></button>
-                <button class="btn text-danger" (click)="deleteModal(item?.id)"><i class="far fa-times-circle"></i></button>
+                <button class="btn text-danger" (click)="deleteModal(item?.id)"><i
+                    class="far fa-times-circle"></i></button>
               </div>
             </div>
           </div>
         </mat-card-title>
         <div class="overflow-hidden" style="max-height: 200px">
           <img mat-card-image src="assets/img/lion.png">
+          <!-- Carousel -->
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" *ngFor="let item of item?.imageUrl">
+                <img class="d-block w-100" [src]="item" alt="Business Image">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
         </div>
 
         <mat-card-content>

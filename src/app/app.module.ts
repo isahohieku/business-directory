@@ -7,6 +7,7 @@ import { LayoutModule } from './layout/layout.module';
 import { MainModule } from './main/main.module';
 import { SharedModule } from './shared/shared.module';
 import { AdminLayoutModule } from './admin-layout/admin-layout.module';
+import { BusinessCardComponent } from './util/business-card/business-card.component';
 
 @NgModule({
   declarations: [

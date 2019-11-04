@@ -1,3 +1,4 @@
+<!-- Jumbotron and Serch -->
 <div class="container-fluid">
     <div class="row">
         <div class="col px-0">
@@ -32,3 +33,81 @@
         </div>
     </div>
 </div>
+
+<!-- Recent businesses -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col">
+            <h5>All businesses</h5>
+        </div>
+        <div class="col d-flex justify-content-end">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <!-- A business card -->
+        <div class="col-4 mt-3" *ngFor="let item of businesses">
+            <mat-card>
+                <mat-card-title>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col px-0">
+                                <small class="text-truncate w-100">{{ item?.name }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-title>
+                <div class="overflow-hidden" style="max-height: 200px">
+                    <img mat-card-image src="assets/img/lion.png">
+                    <!-- Carousel -->
+                </div>
+
+                <mat-card-content>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col px-0">
+                                <p class="text-justify mt-3">
+                                    {{ item?.description }}
+                                </p>
+                                <p>
+                                    <i class="fas fa-map-marker-alt mr-3"></i>
+                                    <span>{{item?.location}}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col d-flex justify-content-end">
+                                <p class="mt-1 mr-2">Views</p>
+                                <mat-chip-list class="text-center">
+                                    <mat-chip class="d-inline" color="accent" selected>{{ item?.views }}</mat-chip>
+                                </mat-chip-list>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+
+                <!-- <mat-card-footer class="pb-3">
+            <hr>
+            <div class="container">
+              <p class="text-grey">Categories</p>
+              <div class="row">
+                <div class="col d-flex justify-content-center">
+                  <mat-chip-list class="text-center">
+                    <mat-chip class="d-inline">Software development</mat-chip>
+                    <mat-chip class="d-inline">Web design</mat-chip>
+                    <mat-chip class="d-inline">Dal</mat-chip>
+                  </mat-chip-list>
+                </div>
+              </div>
+            </div>
+          </mat-card-footer> -->
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<!-- hr -->
+
+<hr>
