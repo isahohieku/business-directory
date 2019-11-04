@@ -23,7 +23,7 @@ export const config: CloudinaryConfiguration = environment.cloudinaryConfigs;
 @NgModule({
   declarations: [
     ImageUploadComponent,
-    ImageUploadSingleComponent
+    ImageUploadSingleComponent,
   ],
   imports: [
     CommonModule,
