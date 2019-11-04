@@ -12,6 +12,7 @@ import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5
 import { FileUploadModule } from 'ng2-file-upload';
 import { Cloudinary as cloudinary_core } from 'cloudinary-core';
 import { environment } from '../../environments/environment.prod';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 export const cloudinary = {
   Cloudinary: cloudinary_core
@@ -37,7 +38,9 @@ export const config: CloudinaryConfiguration = environment.cloudinaryConfigs;
     FileUploadModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+     { provide: MatDialogRef, useValue: {} }
   ],
   exports: [
     // Modules

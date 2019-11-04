@@ -12,6 +12,7 @@ import { UtilService } from 'src/app/services/util.service';
 })
 export class BusinessesComponent implements OnInit {
   businesses: any[] = [];
+  activeBusiness: any;
 
   constructor(
     private dialog: MatDialog,
@@ -33,7 +34,10 @@ export class BusinessesComponent implements OnInit {
         }
       })
       .catch(e => console.log(e));
+  }
 
+  getSelectedBusiness(id) {
+    return this.businesses.find(item => item.id === id);
   }
 
   openCreateModal() {
@@ -44,11 +48,14 @@ export class BusinessesComponent implements OnInit {
       .afterClosed().subscribe(_ => { });
   }
 
-  deleteModal() {
+  deleteModal(id) {
+    const data = this.getSelectedBusiness(id);
+    data.component = 'business';
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = false;
+    dialogConfig.data = data;
     this.dialog.open(DeleteItemModalComponent, dialogConfig)
-      .afterClosed().subscribe(_ => { });
+      .afterClosed().subscribe(_ => { this.getBusinesses(); });
   }
 }

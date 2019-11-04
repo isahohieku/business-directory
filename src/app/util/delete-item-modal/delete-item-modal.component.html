@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h6>Delete Business</h6>
+      <h6 class="text-capitalize">Delete {{ data?.component }}</h6>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
-      <p class="text-center py-3">Are you sure you want to delete Web development?</p>
+      <p class="text-center py-3">Are you sure you want to delete <b>{{ data?.name }}</b>?</p>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
       <button mat-stroked-button color="warn" [mat-dialog-close]="true">Close</button>
     </div>
     <div class="col d-flex justify-content-center">
-        <button mat-raised-button color="warn">Delete</button>
+        <button mat-raised-button color="warn" (click)="deleteBusiness()">Delete</button>
       </div>
   </div>
 </div>

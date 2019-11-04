@@ -39,15 +39,22 @@ export class CategoriesComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = false;
     this.dialog.open(CreateCategoryModalComponent, dialogConfig)
-      .afterClosed().subscribe(_ => { });
+      .afterClosed().subscribe(_ => { this.getCategories(); });
   }
 
-  deleteModal() {
+  getSelectedCategory(id) {
+    return this.categories.find(item => item.id === id);
+  }
+
+  deleteModal(id) {
+    const data = this.getSelectedCategory(id);
+    data.component = 'category';
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = false;
+    dialogConfig.data = data;
     this.dialog.open(DeleteItemModalComponent, dialogConfig)
-      .afterClosed().subscribe(_ => { });
+      .afterClosed().subscribe(_ => { this.getCategories(); });
   }
 
 }
