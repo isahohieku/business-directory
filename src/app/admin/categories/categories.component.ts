@@ -10,6 +10,7 @@ import { CrudService } from 'src/app/services/crud.service';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
+  categories: any[] = [];
 
   constructor(
     private dialog: MatDialog,
@@ -24,7 +25,10 @@ export class CategoriesComponent implements OnInit {
     const url = `categories`;
 
     this.crud.getAllMethod(url)
-      .then(res => {
+      .then((res: any) => {
+        if (res.status === 'success') {
+          this.categories = res.data;
+        }
         console.log(res);
       })
       .catch(e => console.log(e));

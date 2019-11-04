@@ -27,18 +27,41 @@
             </div>
           </div>
         </div>
-        <!-- Business website-->
+        <!-- Business Categories-->
         <div class="container">
           <div class="row">
             <div class="col">
-              <mat-form-field class="w-100" style="width: 500px !important">
-                <input matInput type="text" placeholder="Business Website" formControlName="website">
+              <mat-form-field class="w-100">
+                <input matInput type="text" [matAutocomplete]="auto" placeholder="Enter category keyword"
+                  formControlName="businessCategory">
               </mat-form-field>
+              <!-- Auto complete -->
+              <div class="position-absolute">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let res of searchTerm" [value]="res?.name" (click)="addCategory(res)">
+                    {{res?.name}}
+                  </mat-option>
+                </mat-autocomplete>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Business Email-->
+
+        <!-- Selected Business Categories-->
         <div class="container">
+          <div class="row">
+            <div class="col">
+              <mat-chip-list>
+                <mat-chip *ngFor="let item of categories" color="primary" selected>
+                  {{ item?.name }}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Email-->
+        <div class="container mt-4">
           <div class="row">
             <div class="col">
               <mat-form-field class="w-100" style="width: 500px !important">
@@ -47,6 +70,18 @@
             </div>
           </div>
         </div>
+
+        <!-- Business Website -->
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w-100" style="width: 500px !important">
+                <input matInput type="text" placeholder="Business Website" formControlName="website">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
         <!-- Business phone number-->
         <div class="container">
           <div class="row">

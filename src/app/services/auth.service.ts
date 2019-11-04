@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ export class AuthService {
 
   private baseUrl = 'http://localhost:3000/api/';
   private Header: { headers: HttpHeaders; };
+
+  private login: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
     private http: HttpClient,

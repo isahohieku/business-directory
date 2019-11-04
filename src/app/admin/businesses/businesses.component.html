@@ -17,13 +17,13 @@
   </div>
   <div class="row mt-4">
     <!-- A business card -->
-    <div class="col-4">
+    <div class="col-4 mt-3" *ngFor="let item of businesses">
       <mat-card>
         <mat-card-title>
           <div class="container">
             <div class="row">
               <div class="col px-0">
-                <small>INITS Limited</small>
+                <small class="text-truncate w-100">{{ item?.name }}</small>
               </div>
               <div class="col px-0 d-flex justify-content-end">
                 <button class="btn text-success" (click)="openCreateModal()"><i class="fas fa-pen"></i></button>
@@ -41,27 +41,26 @@
             <div class="row">
               <div class="col px-0">
                 <p class="text-justify mt-3">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia cum dolorem officia consequuntur
-                  tempore!
+                  {{ item?.description }}
                 </p>
 
                 <p>
                   <i class="fas fa-link mr-3"></i>
-                  <a href="www.inits.ng">www.inits.ng</a>
+                  <a href="{{item?.website}}">{{ item?.website }}</a>
                 </p>
 
                 <p>
                   <i class="far fa-envelope mr-3"></i>
-                  <a href="mailto:inits@email.com">inits@email.com</a>
+                  <a href="mailto:{{item?.email}}">{{ item?.email }}</a>
                 </p>
 
                 <p>
                   <i class="fas fa-phone fa-flip-horizontal mr-3"></i>
-                  <a href="tel:+1-555-555-1212">555-555-1212</a>
+                  <a href="tel:{{item?.phone}}">{{item?.phone}}</a>
                 </p>
                 <p>
                   <i class="fas fa-map-marker-alt mr-3"></i>
-                  <span>Yaba, Lagos</span>
+                  <span>{{item?.location}}</span>
                 </p>
               </div>
             </div>
@@ -72,14 +71,14 @@
               <div class="col d-flex justify-content-end">
                 <p class="mt-1 mr-2">Views</p>
                 <mat-chip-list class="text-center">
-                  <mat-chip class="d-inline" color="accent" selected>100</mat-chip>
+                  <mat-chip class="d-inline" color="accent" selected>{{ item?.views }}</mat-chip>
                 </mat-chip-list>
               </div>
             </div>
           </div>
         </mat-card-content>
 
-        <mat-card-footer class="pb-3">
+        <!-- <mat-card-footer class="pb-3">
           <hr>
           <div class="container">
             <p class="text-grey">Categories</p>
@@ -93,7 +92,7 @@
               </div>
             </div>
           </div>
-        </mat-card-footer>
+        </mat-card-footer> -->
       </mat-card>
     </div>
   </div>

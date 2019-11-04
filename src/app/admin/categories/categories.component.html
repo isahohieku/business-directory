@@ -17,13 +17,13 @@
   </div>
 
   <div class="row mt-5">
-    <div class="col-4">
-      <mat-card>
+    <div class="col-4" *ngFor="let item of categories">
+      <mat-card >
         <mat-card-title>
           <div class="container">
             <div class="row">
               <div class="col px-0 d-flex justify-content-center">
-                <small>Web development</small>
+                <small>{{ item?.name }}</small>
               </div>
             </div>
           </div>
