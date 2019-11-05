@@ -9,7 +9,7 @@ import { UtilService } from './util.service';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:3000/api/';
+  private baseUrl = 'https://business-directory-backend.herokuapp.com/api/';
   private Header: { headers: HttpHeaders; };
 
   private login: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
