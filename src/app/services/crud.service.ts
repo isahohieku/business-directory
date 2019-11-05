@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CrudService {
 
-  private baseUrl = 'http://business-directory-backend/api/';
+  private baseUrl = 'https://business-directory-backend/api/';
   private header: { headers: HttpHeaders; };
 
   constructor(
